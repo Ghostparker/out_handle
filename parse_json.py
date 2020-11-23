@@ -1,7 +1,7 @@
 import sys,os,cv2,json
 import os.path as osp
 
-
+detname = ['car','person','bicycle','tricycle']
 
 
 def crop_only_onecar(resjson, save_dir,ori_dir):
@@ -15,10 +15,15 @@ def crop_only_onecar(resjson, save_dir,ori_dir):
         res = resjson['result']
         print('--------------')
 
+
+        dt = None
         for i in res:
-            print(i)
-        print(type(res))
-        print(len(res))
+            if(i['tagtype'] in detname):
+                print(i)
+                dt = i['data']
+                break
+
+        print(dt)
 
 
     except:

@@ -16,6 +16,8 @@ def crop_only_onecar(resjson, save_dir,ori_dir):
         print('--------------')
         print(res)
         print(type(res))
+        print(len(res))
+
 
     except:
         raise

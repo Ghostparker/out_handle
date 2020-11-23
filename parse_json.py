@@ -7,11 +7,15 @@ import os.path as osp
 def crop_only_onecar(resjson, save_dir,ori_dir):
     try:
         fn = resjson['url_image']
-        print(fn)
+
 
         picfn = osp.join(ori_dir,'{}'.format(fn.split('/')[-1]))
         src = cv2.imread(picfn)
-        print(src.shape)
+
+        res = resjson['result']
+        print('--------------')
+        print(res)
+        print(type(res))
 
     except:
         raise

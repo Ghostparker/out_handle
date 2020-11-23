@@ -6,7 +6,7 @@ import os.path as osp
 
 def crop_only_onecar(resjson, save_dir):
     try:
-
+        pass
 
     except:
         raise

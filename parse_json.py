@@ -40,6 +40,7 @@ def main():
     else:
         jsonfile = sys.argv[1]
         pic_dir = sys.argv[2]
+        print(pic_dir)
         save_dir = '/root/cutpic/{}'.format(pic_dir.split('/')[-1])
 
     if(osp.exists(save_dir) == False):

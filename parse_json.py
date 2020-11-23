@@ -1,6 +1,6 @@
 import sys,os,cv2,json
 import os.path as osp
-
+import numpy as np
 detname = ['car','person','bicycle','tricycle']
 
 
@@ -19,16 +19,15 @@ def crop_only_onecar(resjson, save_dir,ori_dir):
         dt = None
         for i in res:
             if(i['tagtype'] in detname):
-                print(i)
                 dt = i['data']
                 break
         x1,y1,x2,y2 = dt
         if(x1 > x2 and y1 > y2):
             x2 , x1 = x1,x2
             y1,y2 = y2,y1
-        print(x1,y1)
-        print(type(x1))
 
+        blackpic = np.zeros_like(src)
+        print(blackpic.shape)
 
     except:
         raise

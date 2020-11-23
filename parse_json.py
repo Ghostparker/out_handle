@@ -8,12 +8,12 @@ def crop_only_onecar(resjson, save_dir,ori_dir):
     try:
         fn = resjson['url_image']
 
-
+        print(save_dir)
         picfn = osp.join(ori_dir,'{}'.format(fn.split('/')[-1]))
         src = cv2.imread(picfn)
 
         res = resjson['result']
-        print('--------------')
+        # print('--------------')
 
 
         dt = None
@@ -47,7 +47,7 @@ def main():
 
     for line in open(jsonfile):
         resjson = json.loads(line.strip())
-        print(resjson)
+        # print(resjson)
         crop_only_onecar(resjson,save_dir,pic_dir)
         exit(1)
 

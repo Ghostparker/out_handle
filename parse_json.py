@@ -12,7 +12,7 @@ def crop_only_onecar(resjson, save_dir):
         raise
 
 def main():
-    if(len(sys.argv) <= 3):
+    if(len(sys.argv) < 3):
         print('Please input jsonfile , picdir ')
         exit(1)
     else:

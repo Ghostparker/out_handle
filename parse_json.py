@@ -28,6 +28,9 @@ def crop_only_onecar(resjson, save_dir,ori_dir):
 
         blackpic = np.zeros_like(src)
         print(blackpic.shape)
+        blackpic[y1:y2,x1:x2,] = src[y1:y2,x1:x2,]
+        writefn = osp.join(save_dir,fn.split('/')[-1])
+        cv2.imwrite(writefn,blackpic)
 
     except:
         raise

@@ -14,7 +14,9 @@ def crop_only_onecar(resjson, save_dir,ori_dir):
 
         res = resjson['result']
         print('--------------')
-        print(res)
+
+        for i in res:
+            print(i)
         print(type(res))
         print(len(res))
 

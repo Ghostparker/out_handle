@@ -22,8 +22,12 @@ def crop_only_onecar(resjson, save_dir,ori_dir):
                 print(i)
                 dt = i['data']
                 break
-
-        print(dt)
+        x1,y1,x2,y2 = dt
+        if(x1 > x2 and y1 > y2):
+            x2 , x1 = x1,x2
+            y1,y2 = y2,y1
+        print(x1,y1)
+        print(type(x1))
 
 
     except:

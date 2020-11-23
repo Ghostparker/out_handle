@@ -41,7 +41,8 @@ def main():
         jsonfile = sys.argv[1]
         pic_dir = sys.argv[2]
         print(pic_dir)
-        save_dir = '/root/cutpic/{}'.format(pic_dir.split('/')[-1])
+        data = pic_dir.split('/')
+        save_dir = '/root/cutpic/{}/{}'.format(data[-2],data[-1])
 
     if(osp.exists(save_dir) == False):
         os.makedirs(save_dir)

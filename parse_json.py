@@ -21,13 +21,11 @@ def crop_only_onecar(resjson, save_dir,ori_dir):
             if(i['tagtype'] in detname):
                 dt = i['data']
                 break
-        x1,y1,x2,y2 = dt
-        if(x1 > x2 and y1 > y2):
-            x2 , x1 = x1,x2
-            y1,y2 = y2,y1
+        x1,y1,w,h = dt
+        x2,y2 = x1+w,y1+h
 
         blackpic = np.zeros_like(src)
-        print(blackpic.shape)
+        # print(blackpic.shape)
         blackpic[y1:y2,x1:x2,] = src[y1:y2,x1:x2,]
         writefn = osp.join(save_dir,fn.split('/')[-1])
         cv2.imwrite(writefn,blackpic)
